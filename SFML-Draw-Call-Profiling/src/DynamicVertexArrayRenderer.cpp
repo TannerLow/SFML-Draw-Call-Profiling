@@ -4,15 +4,15 @@
 #include "util/VertexHelper.h"
 
 DynamicVertexArrayRenderer::DynamicVertexArrayRenderer(int numberOfSprites) {
-	if (!texture.loadFromFile("resources/o2craftround.png")) {
-		printf("Failed to load image resources/o2craftround.png for SpriteRenderer\n");
+	if (!texture.loadFromFile("resources/rhino.png")) {
+		printf("Failed to load image resources/rhino.png for SpriteRenderer\n");
 	}
 
 	vertices.setPrimitiveType(sf::PrimitiveType::Triangles);
 	vertices.resize(numberOfSprites * 6);
 
 	for (int i = 0; i < numberOfSprites; i++) {
-		sf::IntRect textureRect{ {i * 100 % 1500, i * 100 % 800}, {100, 100} };
+		sf::IntRect textureRect{ {i * 100 % 1180, i * 100 % 620}, {100, 100} };
 		sf::FloatRect quad{ {800, 450}, {100, 100} };
 		vh::positionQuad(&(vertices[i * 6]), quad);
 		vh::updateQuadTexture(&(vertices[i * 6]), textureRect);

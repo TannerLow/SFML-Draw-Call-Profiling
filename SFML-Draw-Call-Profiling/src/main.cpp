@@ -42,9 +42,9 @@ int main() {
             for (auto time : drawTimes) {
                 sum += time;
             }
-            int64_t avg = sum / maxFrameCount;
+            double avg = (double)sum / maxFrameCount;
             double fps = 1000000.0 / avg;
-            printf("Average us per frames across %d frames: %lu = ", maxFrameCount, avg);
+            printf("Average us per frames across %d frames: %.2f = ", maxFrameCount, avg);
             printf("%.2f fps\n", fps);
             drawTimes.clear();
         }

@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 SpriteRenderer::SpriteRenderer(int numberOfSprites) {
-	if (!texture.loadFromFile("resources/o2craftround.png")) {
-		printf("Failed to load image resources/o2craftround.png for SpriteRenderer\n");
+	if (!texture.loadFromFile("resources/rhino.png")) {
+		printf("Failed to load image resources/rhino.png for SpriteRenderer\n");
 	}
 
 	for (int i = 0; i < numberOfSprites; i++) {
-		sf::Sprite sprite(texture, sf::IntRect({ {i * 100 % 1500, i * 100 % 800}, {100, 100} }));
+		sf::Sprite sprite(texture, sf::IntRect({ {i * 100 % 1180, i * 100 % 620}, {100, 100} }));
 		sprite.setPosition({ 800, 450 });
 		sprites.push_back(sprite);
 	}
