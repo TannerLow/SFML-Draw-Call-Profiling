@@ -158,11 +158,15 @@
     <ClCompile Include="src\DynamicVertexArrayRenderer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\SpriteRenderer.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\util\RateLimiter.cpp" />
     <ClCompile Include="src\util\VertexHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DynamicVertexArrayRenderer.h" />
     <ClInclude Include="src\SpriteRenderer.h" />
+    <ClInclude Include="src\Timer.h" />
+    <ClInclude Include="src\util\RateLimiter.h" />
     <ClInclude Include="src\util\VertexHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

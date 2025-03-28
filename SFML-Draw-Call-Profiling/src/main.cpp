@@ -4,18 +4,21 @@
 #include <SFML/System.hpp>
 #include <stdio.h>
 #include <vector>
+#include "Timer.h"
+#include "util/RateLimiter.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode({ 1600, 900 }), "SFML Draw Call Profiling");
 
     //SpriteRenderer renderer(1000);
-    DynamicVertexArrayRenderer renderer(10000);
+    DynamicVertexArrayRenderer renderer(5000);
 
-    sf::Clock drawClock;
-    int frameCount = 0;
-    int maxFrameCount = 2000;
-    int64_t drawTimeSum = 0;
+    Timer updateTimer("update", 2000);
+    Timer clearTimer("clear", 2000);
+    Timer drawTimer("draw", 2000);
+    Timer displayTimer("display", 2000);
 
+    RateLimiter rateLimiter(1000);
 
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
@@ -24,37 +27,23 @@ int main() {
             }
         }
 
+        rateLimiter.tick();
+
+        updateTimer.start();
         renderer.update();
+        updateTimer.stop();
 
-
-        //drawClock.restart();
-
+        clearTimer.start();
         window.clear();
+        clearTimer.stop();
 
-        ///////////////
-        //drawClock.restart();
-
-        //window.clear();
+        drawTimer.start();
         window.draw(renderer);
+        drawTimer.stop();
 
-        drawClock.restart();
+        displayTimer.start();
         window.display();
-
-        int64_t drawTime = drawClock.getElapsedTime().asMicroseconds();
-        drawTimeSum += drawTime;
-        frameCount++;
-
-        if (frameCount >= maxFrameCount) {
-            frameCount = 0;
-            double avg = (double)drawTimeSum / maxFrameCount;
-            double fps = 1000000.0 / avg;
-            printf("Average us per frames across %d frames: %.2f = ", maxFrameCount, avg);
-            printf("%.2f fps\n", fps);
-            drawTimeSum = 0;
-        }
-        ///////////////
-
-        //window.display();
+        displayTimer.stop();
     }
 
     return 0;
