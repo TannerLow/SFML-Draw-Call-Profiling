@@ -2,14 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-class DynamicVertexArrayRenderer : public sf::Drawable {
+class StaticVertexArrayRenderer : public sf::Drawable {
 public:
 	sf::VertexArray vertices;
 	sf::Texture texture;
 	//std::vector<sf::Texture*> textures;
 
-	DynamicVertexArrayRenderer(int numberOfSprites);
-	~DynamicVertexArrayRenderer();
+	StaticVertexArrayRenderer(int numberOfSprites);
+	~StaticVertexArrayRenderer() {}
 
 	void update();
 

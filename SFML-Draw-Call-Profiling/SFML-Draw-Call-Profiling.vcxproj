@@ -155,19 +155,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DynamicVertexArrayRenderer.cpp" />
+    <ClCompile Include="src\MultiTexture\MultiTextureSpriteRenderer.cpp" />
+    <ClCompile Include="src\MultiTexture\MultiTextureVertexArrayRenderer.cpp" />
+    <ClCompile Include="src\SingleTexture\StaticVertexArrayRenderer.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\SpriteRenderer.cpp" />
-    <ClCompile Include="src\Timer.cpp" />
-    <ClCompile Include="src\util\RateLimiter.cpp" />
-    <ClCompile Include="src\util\VertexHelper.cpp" />
+    <ClCompile Include="src\SingleTexture\SingleTextureSpriteRenderer.cpp" />
+    <ClCompile Include="src\Tests\MultiTextureSpritesTest.cpp" />
+    <ClCompile Include="src\Tests\MultiTextureVertexArrayTest.cpp" />
+    <ClCompile Include="src\Tests\SingleTextureSpritesTest.cpp" />
+    <ClCompile Include="src\Tests\SingleTextureVertexArrayTest.cpp" />
+    <ClCompile Include="src\Util\Timer.cpp" />
+    <ClCompile Include="src\Util\RateLimiter.cpp" />
+    <ClCompile Include="src\Util\VertexHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DynamicVertexArrayRenderer.h" />
-    <ClInclude Include="src\SpriteRenderer.h" />
-    <ClInclude Include="src\Timer.h" />
-    <ClInclude Include="src\util\RateLimiter.h" />
-    <ClInclude Include="src\util\VertexHelper.h" />
+    <ClInclude Include="src\MultiTexture\MultiTextureSpriteRenderer.h" />
+    <ClInclude Include="src\MultiTexture\MultiTextureVertexArrayRenderer.h" />
+    <ClInclude Include="src\SingleTexture\StaticVertexArrayRenderer.h" />
+    <ClInclude Include="src\SingleTexture\SingleTextureSpriteRenderer.h" />
+    <ClInclude Include="src\Tests\MultiTextureSpritesTest.h" />
+    <ClInclude Include="src\Tests\MultiTextureVertexArrayTest.h" />
+    <ClInclude Include="src\Tests\SingleTextureSpritesTest.h" />
+    <ClInclude Include="src\Tests\SingleTextureVertexArrayTest.h" />
+    <ClInclude Include="src\Util\Timer.h" />
+    <ClInclude Include="src\Util\RateLimiter.h" />
+    <ClInclude Include="src\Util\VertexHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,7 @@ private:
 
 public:
 
+	Timer() {}
 	Timer(std::string name, int maxCount) : name(name), maxCount(maxCount) {}
 	~Timer() {}
 
@@ -19,6 +20,8 @@ public:
 
 	void clear();
 	void setMaxCount(int maxCount);
+	void setName(std::string name);
+	void set(std::string name, int maxCount);
 
 private:
 	double getTicksPerSecond() const;

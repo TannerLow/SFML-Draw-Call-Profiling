@@ -2,14 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-class SpriteRenderer : public sf::Drawable {
+class SingleTextureSpriteRenderer : public sf::Drawable {
 public:
 	std::vector<sf::Sprite> sprites;
 	sf::Texture texture;
-	//std::vector<sf::Texture*> textures;
 
-	SpriteRenderer(int numberOfSprites);
-	~SpriteRenderer();
+	SingleTextureSpriteRenderer(int numberOfSprites);
+	~SingleTextureSpriteRenderer() {}
 
 	void update();
 

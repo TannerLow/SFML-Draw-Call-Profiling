@@ -1,9 +1,9 @@
-#include "DynamicVertexArrayRenderer.h"
+#include "StaticVertexArrayRenderer.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "util/VertexHelper.h"
+#include "../Util/VertexHelper.h"
 
-DynamicVertexArrayRenderer::DynamicVertexArrayRenderer(int numberOfSprites) {
+StaticVertexArrayRenderer::StaticVertexArrayRenderer(int numberOfSprites) {
 	if (!texture.loadFromFile("resources/rhino.png")) {
 		printf("Failed to load image resources/rhino.png for SpriteRenderer\n");
 	}
@@ -17,15 +17,9 @@ DynamicVertexArrayRenderer::DynamicVertexArrayRenderer(int numberOfSprites) {
 		vh::positionQuad(&(vertices[i * 6]), quad);
 		vh::updateQuadTexture(&(vertices[i * 6]), textureRect);
 	}
-
-	srand(0);
 }
 
-DynamicVertexArrayRenderer::~DynamicVertexArrayRenderer() {
-
-}
-
-void DynamicVertexArrayRenderer::update() {
+void StaticVertexArrayRenderer::update() {
 	sf::Vector2f offset;
 	sf::FloatRect quad;
 	quad.size = { 100, 100 };
@@ -33,18 +27,19 @@ void DynamicVertexArrayRenderer::update() {
 		sf::Vector2f& pos = vertices[i * 6].position;
 		offset = { (float)(rand() % 21 - 10), (float)(rand() % 21 - 10) };
 		pos += offset;
-		if (pos.x < 0 or pos.x > 1600) {
+		if (pos.x < 0 or pos.x > 1400) {
 			pos.x += -offset.x;
 		}
-		if (pos.y < 0 or pos.y > 900) {
+		if (pos.y < 0 or pos.y > 800) {
 			pos.y += -offset.y;
 		}
+
 		quad.position = pos;
 		vh::positionQuad(&(vertices[i * 6]), quad);
 	}
 }
 
-void DynamicVertexArrayRenderer::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void StaticVertexArrayRenderer::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	states.texture = &texture;
 
 	target.draw(vertices, states);

@@ -1,0 +1,37 @@
+-- single texture sprite --
+Timer [update] average ticks per second across 2000 ticks: 7158.43
+Timer [clear] average ticks per second across 2000 ticks: 9852216.68
+Timer [draw] average ticks per second across 2000 ticks: 1714.05
+Timer [display] average ticks per second across 2000 ticks: 74827.90
+Timer [full] average ticks per second across 2000 ticks: 1353.30
+
+
+-- single texture vertex array --
+Timer [update] average ticks per second across 2000 ticks: 3589.64
+Timer [clear] average ticks per second across 2000 ticks: 11494252.87
+Timer [draw] average ticks per second across 2000 ticks: 14137.67
+Timer [display] average ticks per second across 2000 ticks: 70899.36
+Timer [full] average ticks per second across 2000 ticks: 2733.34
+
+-- multi texture sprite ordered textures --
+Timer [update] average ticks per second across 2000 ticks: 6957.01
+Timer [clear] average ticks per second across 2000 ticks: 14492753.58
+Timer [draw] average ticks per second across 2000 ticks: 1686.12
+Timer [display] average ticks per second across 2000 ticks: 70831.56
+Timer [full] average ticks per second across 2000 ticks: 1327.59
+
+-- multi texture sprites random texture order --
+Timer [update] average ticks per second across 2000 ticks: 6429.44
+Timer [clear] average ticks per second across 2000 ticks: 837871.80
+Timer [draw] average ticks per second across 2000 ticks: 1312.48
+Timer [display] average ticks per second across 2000 ticks: 405.51
+Timer [full] average ticks per second across 2000 ticks: 295.25
+
+-- multi texture vertex array --
+Timer [update] average ticks per second across 2000 ticks: 7714.47
+Timer [clear] average ticks per second across 2000 ticks: 16393442.63
+Timer [draw] average ticks per second across 2000 ticks: 4003.92
+Timer [display] average ticks per second across 2000 ticks: 79897.73
+Timer [full] average ticks per second across 2000 ticks: 2537.27
+
+

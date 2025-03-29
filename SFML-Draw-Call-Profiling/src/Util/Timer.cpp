@@ -32,3 +32,12 @@ void Timer::clear() {
 void Timer::setMaxCount(int maxCount) {
 	this->maxCount = maxCount;
 }
+
+void Timer::setName(std::string name) {
+	this->name = name;
+}
+
+void Timer::set(std::string name, int maxCount) {
+	setName(name);
+	setMaxCount(maxCount);
+}
